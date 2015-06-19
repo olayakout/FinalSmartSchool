@@ -1,0 +1,119 @@
+#library{
+  width: 412px;
+  height: auto;
+  margin-right: 385px;
+  margin-top: -144px;
+}
+tr{
+  border-bottom: rgb(251, 243, 218) solid 1px;
+}
+
+#myContent1,#myContent2{
+
+}
+
+#book,#link{
+font-size: 58px;
+border-radius: 76px;
+width: 219px;
+color:white;
+margin-bottom: 11px;
+}
+
+#book{
+background-color:rgb(138, 203, 154);;
+}
+#link{
+background-color:rgb(219, 102, 108);
+}
+
+.book{
+float:left;
+width:500px;
+float:left !important;
+direction:rtl;
+margin-left: 103px;
+text-align:center;
+}
+.link{
+width:500px;
+float:left !important;
+direction:rtl;
+margin-left: 64px;
+margin-bottom: 42px;
+text-align:center;
+}
+
+#bo{
+  width: 344px;
+  margin-top: -237px;
+  margin-left: 470px;
+}
+
+#all{
+  width: 471px;
+  font-size: 24px;
+  padding: 20px;
+  font-size: 18px;
+  border: solid 10px;
+  margin-top: 27px;
+  border-radius: 28%;
+  background-color: rgba(199, 90, 96, 0.16);
+  float:left !important;
+  direction:rtl;
+list-style-type: none;
+  min-height: 410px;
+
+}
+
+.url{
+color:rgb(219, 102, 108);
+}
+
+.bookname{
+  color: rgb(109, 171, 124);
+}
+
+#bookinfo{
+  margin-bottom: 30px;
+}
+
+.link > ul > li{
+  padding-bottom: 8px;
+}
+
+#wzara > img{
+width: 314px;
+}
+
+#wzara{
+  width: 814px;
+  font-size: 24px;
+  padding: 20px;
+  font-size: 18px;
+  margin-top: 27px;
+  float: left !important;
+  direction: rtl;
+  color: rgb(241, 77, 126);
+  list-style-type: none;
+  margin-left: 103px;
+}
+
+#wzara > p{
+  line-height: 26px;
+  font-size: 20px;
+  color: rgb(140, 134, 134);
+}
+
+
+#m{
+   float: left;
+  width: 278px;
+  margin-left: 31px;
+  margin-top: 5px;
+}
+
+.label{
+  color: #DB666C;
+
+}

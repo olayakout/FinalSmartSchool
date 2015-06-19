@@ -1,0 +1,53 @@
+.adv{
+  direction: rtl;
+  border: solid;
+  width: 366px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-right: 54px;
+}
+
+h1{
+  color: rgb(138, 203, 154);
+  font-family: KacstDecorative;
+  font-size: 59px;
+  padding-bottom: 24px;
+  margin-top: -200px;
+  margin-right: 475px;
+}
+
+#g{
+  float: left;
+  margin-left: 47px;
+  margin-top: -133px;
+  margin-right: 22px;
+}
+.alladvs{
+width:314px;
+float:left;
+margin-right: 32px;
+  margin-top: -94px;
+}
+
+.noadv{
+ direction: rtl;
+  border: solid;
+  width: 311px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: -69px;
+  margin-right: 463px;
+  float: right;
+}
+#alladver{
+margin-top:146px;
+}
+
+#b{
+  float: right;
+  margin-right: 187px;
+  margin-top: -114px;
+}

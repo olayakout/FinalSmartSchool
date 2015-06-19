@@ -1,0 +1,90 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} Add Student {% endblock %}
+
+
+
+{% block body %}
+ <h1> ادخال بيانات معلم  </h1>
+
+ {{ form_start(form ,{attr: {novalidate : 'novalidate' }}) }}
+<table>
+    <tr> 
+      <td>  {{ form_errors(form.fullname) }} </td>
+      <td>  {{ form_widget(form.fullname)}} </td> 
+      <td>  {{ form_label(form.fullname, 'الاسم كامل') }} </td>
+    </tr>
+
+<tr> 
+      <td>  {{ form_errors(form.job) }} </td>
+      <td>  {{ form_widget(form.job)}} </td> 
+      <td>  {{ form_label(form.job, 'الوظيفة') }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_errors(form.graduate) }} </td>
+      <td>  {{ form_widget(form.graduate)}} </td> 
+      <td>  {{ form_label(form.graduate, 'المؤهل الدراسي') }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_errors(form.date_of_graduate) }} </td>
+      <td>  {{ form_widget(form.date_of_graduate)}} </td> 
+      <td>  {{ form_label(form.date_of_graduate, 'تاريخ التخرج ') }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_errors(form.birthday) }} </td>
+      <td>  {{ form_widget(form.birthday)}} </td> 
+      <td>  {{ form_label(form.birthday, 'تاريخ الميلاد') }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_errors(form.appointment_date) }} </td>
+      <td>  {{ form_widget(form.appointment_date)}} </td> 
+      <td>  {{ form_label(form.appointment_date, 'تاريخ التعيين') }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_errors(form.join_date) }} </td>
+      <td>  {{ form_widget(form.join_date)}} </td> 
+      <td>  {{ form_label(form.join_date, 'تاريخ استلام العمل ') }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_errors(form.degree) }} </td>
+      <td>  {{ form_widget(form.degree)}} </td> 
+      <td>  {{ form_label(form.degree, 'الدرجة') }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_errors(form.date_of_get_degree) }} </td>
+      <td>  {{ form_widget(form.date_of_get_degree)}} </td> 
+      <td>  {{ form_label(form.date_of_get_degree, 'تاريخ الحصول علي الدرجة ') }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_errors(form.national_id) }} </td>
+      <td>  {{ form_widget(form.national_id)}} </td> 
+      <td>  {{ form_label(form.national_id, 'الرقم القومي') }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_errors(form.address) }} </td>
+      <td>  {{ form_widget(form.address)}} </td> 
+      <td>  {{ form_label(form.address, 'العنوان') }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_errors(form.phone) }} </td>
+      <td>  {{ form_widget(form.phone)}} </td> 
+      <td>  {{ form_label(form.phone, 'التليفون') }} </td>
+    </tr>
+  
+
+</table>
+ {{ form_widget(form.submit, { 'label': 'حفظ' }) }}
+
+ {{ form_end(form) }}
+
+{% endblock %}

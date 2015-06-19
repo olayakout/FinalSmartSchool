@@ -1,0 +1,33 @@
+#suggest{
+text-align: center;
+  align-content: center;
+  border: solid;
+  height: 378px;
+  width: 470px;
+  margin-top: -144px;
+  margin-right: 391px;
+  border-radius: 69%;
+  padding: 20px;
+  background-color: rgba(129, 109, 83, 0.81);
+  direction:rtl;
+  float:right;
+}
+
+tr {
+  border-bottom: rgba(150, 132, 106, 1) solid 1px;
+}
+#suggest > h1{
+
+  color: rgb(181, 204, 224);
+  font-family: KacstDecorative;
+}
+
+button{
+  width: 200px;
+  height: 48px;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 20px;
+  background-color: rgb(181, 204, 222);
+}
+}

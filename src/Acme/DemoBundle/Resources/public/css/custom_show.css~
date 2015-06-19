@@ -1,0 +1,19 @@
+#pp{
+  float: left;
+  margin-left: 69px;
+  margin-top: 37px;
+}
+
+table{
+  margin-right: 96px;
+  margin-top: 65px;
+  font-size: 22px;
+}
+
+h1{
+  text-align: center;
+}
+
+.label{
+font-weight: bold;
+}

@@ -1,0 +1,7 @@
+image 
+
+{%if(student_item[0].image) == null%}
+<img id="pp" src="{{ asset('upload/default.jpg' )}}" height="300" width="300"/>
+{%else%}
+<img id="pp" src="{{ asset('upload/student/' ~ student_item.id ~'/' ~ student_item.image)}}" height="300" width="300"/>
+{%endif%}

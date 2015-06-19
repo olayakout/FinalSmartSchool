@@ -1,0 +1,38 @@
+#hi{
+  margin-top: -201px;
+  text-align: center;
+  font-family: KacstDecorative;
+  font-size: 66px;
+  color: black;
+}
+
+#activity{
+  width: 399px;
+  border: solid 10px #D5C651;
+  border-radius: 29px;
+  margin-right: 13px;
+  text-align:center;
+  font-family: KacstDecorative;
+  margin-top: 40px;
+  background-color: rgb(252, 244, 219);
+  min-height: 303px;
+}
+
+#activity > h1{
+color:rgb(187, 32, 56);
+font-size: 27px;
+}
+
+#activity > p{
+color:black;
+min-height:159px;
+}
+
+#activities{
+margin-top:-200px;
+}
+
+#activity > a{
+  color: #328E8B;
+}
+

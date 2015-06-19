@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>روضة المأمون</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+
+    <link href="{{ asset('bundles/acmedemo/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="{{ asset('bundles/acmedemo/css/freelancer.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{{ asset('bundles/acmedemo/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap-rtl.css') }}">
+
+    <link href="{{ asset('bundles/acmedemo/css/custom_show_all.css') }}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<a href="/book/add">أدخال كتاب جديد  </a>
+<table class="table table-responsive table-striped table-condensed">
+<tr >
+
+<th>الكود </th>
+<th>الأسم</th>
+<th>المؤهل</th>
+<th>تاريخ الحصول علي المؤهل</th>
+<th>تاريخ الميلاد</th>
+<th>تاريخ التعيين</th>
+<th>تاريخ استلام العمل</th>
+<th>الدرجة</th>
+<th>تاريخ الحصول علي الدرجة</th>
+<th>الرقم القومي</th>
+<th>العنوان</th>
+<th>التليفون</th>
+</tr>
+{% for teacher in staff %}
+	<tr>
+		<td>{{ teacher.code }}</td>
+		<td>{{ teacher.fullname }}</td>
+		<td>{{ teacher.graduate }}</td>
+		<td>{{ teacher.dateofgraduate|date("m/d/Y") }}</td>
+		<td>{{ teacher.birthday|date("m/d/Y")}}</td>
+		<td>{{ teacher.appointmentdate|date("m/d/Y") }}</td>
+		<td>{{ teacher.joindate|date("m/d/Y") }}</td>
+		<td>{{ teacher.degree }}</td>
+		<td>{{ teacher.dateofgetdegree|date("m/d/Y") }}</td>
+		<td>{{ teacher.nationalid }}</td>
+		<td>{{ teacher.address }}</td>
+		<td>{{ teacher.phone }}</td>
+		<td><a href="{{ path('acme_staff_show', {'id':  teacher.id  }) }}">عرض</a></td>
+ 		<td><a href="{{ path('acme_staff_delete', {'id':  teacher.id  }) }}">مسح</a>
+ 		<td><a href="{{ path('acme_staff_edit', {'id':  teacher.id  }) }}">تعديل</a>
+	</tr>
+{% endfor %}
+</table>
+</body>
+</html>

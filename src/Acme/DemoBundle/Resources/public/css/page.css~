@@ -1,0 +1,11 @@
+.navbar .navbar-nav {
+  letter-spacing: 1px;
+  margin-right: 117px;
+}
+.two{
+  margin-right: 117px;
+}
+
+body{
+  margin-top: 97px;
+}

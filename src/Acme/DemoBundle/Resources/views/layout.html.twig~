@@ -1,0 +1,118 @@
+{% extends "TwigBundle::layout.html.twig" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>روضة المأمون</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+
+    <link href="{{ asset('bundles/acmedemo/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="{{ asset('bundles/acmedemo/css/freelancer.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{{ asset('bundles/acmedemo/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap-rtl.css') }}">
+
+    <link href="{{ asset('bundles/acmedemo/css/custom.css') }}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">روضة المأمون</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">الصفحة الرئيسية</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">عن الروضة</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#slideshow">قاعات الروضة</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">تواصل معنا</a>
+                    </li>  
+                    <li class="page-scroll">
+                        <a href="login">تسجيل الدخول</a>
+                    </li>                                      
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+
+{% block head %}
+    <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+{% endblock %}
+
+{% block title 'Demo Bundle' %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-message">
+            <em>Notice</em>: {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% block content_header %}
+        <ul id="menu">
+            {% block content_header_more %}
+                <li><a href="{{ path('_demo') }}">Demo Home</a></li>
+            {% endblock %}
+        </ul>
+
+        <div style="clear: both"></div>
+    {% endblock %}
+
+    <div class="block">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% if code is defined %}
+        <h2>Code behind this page</h2>
+        <div class="block">
+            <div class="symfony-content">{{ code|raw }}</div>
+        </div>
+    {% endif %}
+{% endblock %}

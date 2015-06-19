@@ -1,0 +1,57 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} Add Student {% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+
+    <div class="row vertical-center-row">
+
+        <div class="col-lg-12">
+            <div class="row ">
+
+                <div class="col-xs-4 col-xs-offset-4"style="background:lightblue">
+
+ <h2> تعديل الملاحظات</h2>
+
+ {{ form_start(form ,{attr: {'novalidate' : 'novalidate' }}) }}
+<table  class="table table-striped">
+    <tr> 
+    <td>  {{ form_label(form.mynote, 'ملاحظات ') }} </td>
+      <td>  {{ form_errors(form.mynote) }} </td>
+    <td>  {{ form_widget(form.mynote)}} </td> 
+
+    </tr>
+<tr> 
+<td>  {{ form_label(form.noteDate, 'ادخل الوقت') }} </td>
+<td>  {{ form_errors(form.noteDate) }} </td>
+<td>  {{ form_widget(form.noteDate)}} </td> 
+
+</tr>
+<tr> 
+<td>  {{ form_label(form.notes, 'اختر احد المعلمين') }} </td>
+<td>  {{ form_errors(form.notes) }} </td>
+<td>  {{ form_widget(form.notes)}} </td> 
+
+</tr>
+
+<tr>
+<td> </td>
+<td>{{ form_widget(form.submit, { 'label': 'اضف للجميع' }) }}</td>
+<td> </td> 
+
+</tr>
+
+</table>
+
+
+ {{ form_end(form) }}
+</div>
+</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

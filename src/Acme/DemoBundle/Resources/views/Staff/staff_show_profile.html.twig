@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>روضة المأمون</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+
+    <link href="{{ asset('bundles/acmedemo/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="{{ asset('bundles/acmedemo/css/freelancer.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{{ asset('bundles/acmedemo/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap-rtl.css') }}">
+
+    <link href="{{ asset('bundles/acmedemo/css/custom_show.css') }}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<h1>{{ staff_item[0].fullname }}</h1>
+{%if(staff_item[0].image) == null%}
+<img id="pp" src="{{ asset('upload/default.jpg' )}}" height="300" width="300"/>
+{%else%}
+<img id="pp" src="{{ asset('upload/staff/' ~ staff_item.id ~'/' ~ staff_item.image)}}" height="300" width="300"/>
+{%endif%}
+<table>
+		<tr><td class="label"> كود المعلم :</td><td>{{ staff_item[0].code }}</td></tr>
+		<tr> <td class="label">المؤهل :</td><td>{{ staff_item[0].graduate }}</td></tr>
+		<tr><td class="label">تاريخ الحصول غلي المؤهل :</td><td>{{ staff_item[0].dateofgraduate|date("m/d/Y") }}</td></tr>
+		<tr> <td class="label">دراسات عليا :</td>
+		     <td>
+			{%if(staff_item[0].anotherstudy == null)%}
+				----
+			{%else%}
+				{{ staff_item[0].anotherstudy }}
+			{%endif%}
+		    </td></tr>
+		<tr><td class="label">تاريخ الحصول غلي الدراسات العليا :</td>
+		<td>
+		{%if(staff_item[0].dateofanotherstudy != date("1/1/1950"))%}
+			{{ staff_item[0].dateofanotherstudy|date("m/d/Y") }}
+		{%else%} ---- {%endif%}
+		</td></tr>
+		<tr> <td class="label">تاريخ الميلاد :</td><td>{{ staff_item[0].birthday|date("m/d/Y")}}</td></tr>
+		<tr><td class="label">تاريخ التعين :</td><td>{{ staff_item[0].appointmentdate|date("m/d/Y") }}</td></tr>
+		<tr><td class="label">تاريخ استلام العمل :</td><td>{{ staff_item[0].joindate|date("m/d/Y") }}</td></tr>
+		<tr><td class="label">الدرجة :</td><td>{{ staff_item[0].degree }}</td></tr>
+		<tr><td class="label">تاريخ الحصول علي الدرجة :</td><td>{{ staff_item[0].dateofgetdegree|date("m/d/Y") }}</td></tr>
+		<tr> <td class="label">الرقم القومي :</td><td>{{ staff_item[0].nationalid }}</td></tr>
+		<tr><td class="label">العنوان :</td><td>{{ staff_item[0].address }}</td></tr>
+		<tr> <td class="label">التليفون :</td><td>{{ staff_item[0].phones[0].phone }}</td></tr>
+		<tr> <td class="label">الوظيفة :</td><td>{{ staff_item[0].job}}</td></tr>
+
+{% if(staff_item[0].classes) %}
+		<tr> <td class="label">القاعة :</td><td>{%if(staff_item[0].classes[0] is defined)%}{{ staff_item[0].classes[0].class }} {%else%} ------- 
+
+
+
+{%endif%}</td></tr>
+{% endif %}
+</table>

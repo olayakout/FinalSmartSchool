@@ -1,0 +1,106 @@
+<?php
+
+namespace Acme\DemoBundle\Entity;
+
+use FOS\UserBundle\Entity\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+
+class User extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+/**
+     * @ORM\Column(name="code", type="integer")
+     */
+  
+    private $code;
+
+/**
+     * @ORM\Column(name="job",type="string", length=200)
+     */
+  
+    private $job;
+
+
+/**
+     * @ORM\Column(name="graduate",type="string", length=200)
+     */
+  
+    private $graduate;
+
+/**
+     * @ORM\Column(name="date_of_graduate",type="date")
+     */
+  
+    private $date_of_graduate;
+
+/**
+     * @ORM\Column(name="birthday",type="date")
+     */
+  
+    private $birthday;
+
+/**
+     * @ORM\Column(name="appointment_date",type="date")
+     */
+  
+    private $appointment_date;
+
+/**
+     * @ORM\Column(name="join_date",type="date")
+     */
+  
+    private $join_date;
+
+/**
+     * @ORM\Column(name="degree",type="string", length=200)
+     */
+  
+    private $degree;
+
+/**
+     * @ORM\Column(name="date_of_degree",type="date")
+     */
+  
+    private $date_of_degree;
+
+/**
+     * @ORM\Column(name="national_id", type="integer")
+     */
+  
+    private $national_id;
+
+/**
+     * @ORM\Column(name="address",type="string", length=200)
+     */
+  
+    private $address;
+
+/**
+     * @ORM\Column(name="photo",type="string", length=500)
+     */
+  
+    private $photo;
+
+/**
+     * @ORM\Column(name="staff_type", type="integer")
+     */
+  
+    private $staff_type;
+
+
+
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+}

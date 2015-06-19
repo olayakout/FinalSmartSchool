@@ -1,0 +1,68 @@
+Acme\DemoBundle\Entity\Staff:
+    group_sequence: [Staff, Extra]
+    properties:
+        fullname:
+            - NotBlank: { message: "يجب ادخال الاسم كامل " }
+
+        code:
+            - NotBlank: { message: "يجب ادخال كود المعلم" }
+
+        address:
+            - NotBlank: { message: "يجب ادخال العنوان" }
+
+        graduate:
+            - NotBlank: { message: "يجب ادخال المؤهل الدراسي" }
+
+        degree:
+            - NotBlank: { message: "يجب ادخال الدرجة" }
+
+        nationalid:
+            - NotBlank: { message: "يجب ادخال الرقم القومي" }
+
+Acme\DemoBundle\Entity\Book:
+    group_sequence: [Book, Extra]
+    properties:
+        name:
+            - NotBlank: { message: "يجب ادخال اسم الكتاب " }
+
+        code:
+            - NotBlank: { message: "يجب ادخال كود الكتاب" }
+
+        author:
+            - NotBlank: { message: "يجب ادخال مؤلف الكتاب " }
+
+        publishinghouse:
+            - NotBlank: { message: "يجب ادخال دار النشر" }
+
+      
+
+Acme\DemoBundle\Entity\Link:
+    group_sequence: [Link, Extra]
+    properties:
+        url:
+            - NotBlank: { message: "يجب ادخال عنوان للينك  " }
+
+        title:
+            - NotBlank: { message: "يجب ادخال اسم للينك" }
+
+        about:
+            - NotBlank: { message: "يجب ادخال معلومات عن اللينك " }
+
+Acme\DemoBundle\Entity\StaffStudent:
+    group_sequence: [StaffStudent, Extra]
+    properties:
+        note:
+            - NotBlank: { message: "يجب ادخال الملاحظة " }
+
+        noteDate:
+            - NotBlank: { message: "يجب ادخال الوقت" }
+
+   
+Acme\DemoBundle\Entity\StaffNote:
+    group_sequence: [StaffNote, Extra]
+    properties:
+        mynote:
+            - NotBlank: { message: "يجب ادخال الملاحظة " }
+
+        noteDate:
+            - NotBlank: { message: "يجب ادخال الوقت" }        

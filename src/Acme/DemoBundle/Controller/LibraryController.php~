@@ -1,0 +1,190 @@
+<?php
+
+namespace Acme\DemoBundle\Controller;
+
+use Acme\DemoBundle\Entity\Staff;
+use Acme\DemoBundle\Entity\Staffphone;
+use Acme\DemoBundle\Form\StaffType;
+use Symfony\Component\HttpFoundation\Response;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Acme\DemoBundle\Form\ContactType;
+
+// these import the "@Route" and "@Template" annotations
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+
+class StaffController extends Controller
+{
+
+#list 
+
+    /**
+     * @Route("/", name="_demo")
+     * @Template()
+     */
+    public function indexAction()
+    {
+	$staff = $this->getDoctrine()
+            ->getRepository('AcmeDemoBundle:Staff')
+            ->findAll();
+      if (!$staff) {
+        throw $this->createNotFoundException('No teachers found');
+      }
+    
+      $build['staff'] = $staff;
+      return $this->render('AcmeDemoBundle:Staff:staff_show_all.html.twig', $build);
+    }
+
+/////////////////////////////////////////////////////////////CRUD Operations of Teacher////////////////////////////////////////////
+
+#add
+	public function addAction()
+		{
+			$phone = new staffphone();
+			$staff = new staff();
+			$form = $this->createForm(new StaffType(), $staff);
+
+		        $validator = $this->get('validator');
+                        $errors = $validator->validate($staff);
+
+			$request = $this->get('request');
+			$form->handleRequest($request);
+
+		// relate this phone to the one member of staff
+        		$phone->setOwner($staff);
+
+			if($request->getMethod() == 'POST')
+			{
+
+				    if (count($errors) > 0) {
+					/*
+					 * Uses a __toString method on the $errors variable which is a
+					 * ConstraintViolationList object. This gives us a nice string
+					 * for debugging.
+					 */
+	 return $this->render('AcmeDemoBundle:Staff:add.html.twig',array('form'=>$form->createView()));				    
+}
+
+				if($form->isValid())
+				{
+					//$name=$form->get('fullname')->getData();
+				
+		       //to save the data of teacher in database
+			        	$em = $this->getDoctrine()->getManager();
+					$entity = $em->getRepository('AcmeDemoBundle:Staff')->find($id);	
+					$em->persist($entity);
+					$em->flush();
+
+                                  
+                                        $staff = $this->getDoctrine()
+						    ->getRepository('AcmeDemoBundle:Staff')
+						    ->findAll();
+					      if (!$staff) {
+						throw $this->createNotFoundException('No teachers found');
+					      }
+				      $build['staff'] = $staff;
+				      return $this->render('AcmeDemoBundle:Staff:staff_show_all.html.twig', $build);
+				      	
+				}
+			
+			   return $this->render('AcmeDemoBundle:Staff:add.html.twig',array('form'=>$form->createView())); 
+
+			}
+
+			   return $this->render('AcmeDemoBundle:Staff:add.html.twig',array('form'=>$form->createView())); 
+
+		}
+
+#show	
+       public function showAction($id) {
+	      $staff = $this->getDoctrine()
+		    ->getRepository('AcmeDemoBundle:Staff')
+		    ->find($id);
+	      if (!$staff) {
+		throw $this->createNotFoundException('No teachers found by id ' . $id);
+	      }
+	    
+	      $build['staff_item'] = $staff;
+	      return $this->render('AcmeDemoBundle:Staff:staff_show.html.twig', $build);
+	    }
+
+#edit
+	public function editAction($id, Request $request) {
+	    $em = $this->getDoctrine()->getManager();
+	    $staff = $em->getRepository('AcmeDemoBundle:Staff')->find($id);
+
+		$validator = $this->get('validator');
+		$errors = $validator->validate($staff);   
+         
+	    if (!$staff) {
+	      throw $this->createNotFoundException(
+		      'No teachers found for id ' . $id
+	      );
+	    }
+	    
+	    $form = $this->createFormBuilder($staff)
+		->add('code', 'text')
+		->add('fullname', 'text')
+		->add('job', 'text')
+		->add('graduate', 'text')
+		->add('dateofgraduate', 'date')
+		->add('birthday', 'date')
+		->add('appointmentdate', 'date')
+		->add('joindate', 'date')
+		->add('degree', 'text')
+		->add('dateofgetdegree', 'date')
+		->add('nationalid', 'text')
+		->add('address', 'text')
+		->add('phone', 'text')
+		->add('image','file', array(
+                'data_class' => null, 'required' => false
+            ))
+		->add('submit','submit')
+		->getForm();
+
+	    $form->handleRequest($request);
+
+	    if ($form->isValid()) {
+		$em->flush();
+		$staff = $this->getDoctrine()
+			    ->getRepository('AcmeDemoBundle:Staff')
+			    ->findAll();
+		      if (!$staff) {
+			throw $this->createNotFoundException('No teachers found');
+		      }
+	      $build['staff'] = $staff;
+              return $this->render('AcmeDemoBundle:Staff:staff_show_all.html.twig', $build);
+
+		// return new Response('News updated successfully');
+	    }
+	    
+	    $build['form'] = $form->createView();
+
+	    return $this->render('AcmeDemoBundle:Staff:news_add.html.twig', $build);
+	 }
+		 
+#delete
+		 
+		 public function deleteAction($id, Request $request) {
+
+		    $em = $this->getDoctrine()->getManager();
+		    $staff = $em->getRepository('AcmeDemoBundle:Staff')->find($id);
+		    if (!$staff) {
+		      throw $this->createNotFoundException(
+			      'No news found for id ' . $id
+		      );
+		    }
+
+		      $em->remove($staff);
+		      $em->flush();
+		      return new Response('News deleted successfully');
+
+		    
+		    $build['form'] = $form->createView();
+		    return $this->render('AcmeDemoBundle:Staff:news_add.html.twig', $build);
+		}
+
+	}

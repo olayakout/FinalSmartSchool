@@ -1,0 +1,488 @@
+_welcome:
+    path:     /
+    defaults: { _controller: AcmeDemoBundle:Welcome:index }
+
+about:
+    path:     /about
+    defaults: { _controller: AcmeDemoBundle:Welcome:about }
+
+contact:
+    path:     /contact
+    defaults: { _controller: AcmeDemoBundle:Welcome:contact }
+
+library:
+    path:     /library/index
+    defaults: { _controller: AcmeDemoBundle:Welcome:library }
+
+staff:
+    path:     /staff/index
+    defaults: { _controller: AcmeDemoBundle:Welcome:staff }
+
+advertising:
+    path:     /advertising/index
+    defaults: { _controller: AcmeDemoBundle:Welcome:advertising }
+
+nfc:
+    path:     /nfc
+    defaults: { _controller: AcmeDemoBundle:Welcome:nfc }
+
+complain:
+    path:     /complain/index
+    defaults: { _controller: AcmeDemoBundle:Welcome:complain }
+
+activity:
+    path:     /activity/index
+    defaults: { _controller: AcmeDemoBundle:Welcome:activity}
+
+class:
+    path:     /class/index
+    defaults: { _controller: AcmeDemoBundle:Welcome:class}
+
+_demo_secured:
+    resource: "@AcmeDemoBundle/Controller/SecuredController.php"
+    type:     annotation
+
+_demo:
+    resource: "@AcmeDemoBundle/Controller/DemoController.php"
+    type:     annotation
+    prefix:   /demo
+
+index:
+    path:     /login
+    defaults: { _controller: AcmeDemoBundle:Security:login }
+login_check:
+    path:     /login_check
+    defaults: { _controller: AcmeDemoBundle:Security:/loginCheck }
+
+
+addstudent:
+    path:     /addstudent
+    defaults: { _controller: AcmeDemoBundle:AddStudent:addstudent }
+
+
+########################################################################
+#staff
+######
+acme_staff_teacherpage:
+    path:     /teacherpage
+    defaults: { _controller: AcmeDemoBundle:Staff:teacherpage }
+
+acme_staff_mangerpage:
+    path:     /mangerpage
+    defaults: { _controller: AcmeDemoBundle:Staff:mangerpage }
+
+acme_staff_profile:
+    path:     /myprofile
+    defaults: { _controller: AcmeDemoBundle:Staff:showTeacherProfile }
+acme_staff_add:
+    path:     /staff/add
+    defaults: { _controller: AcmeDemoBundle:Staff:add }
+
+acme_staff_show:
+    pattern:  /staff/{id}
+    defaults: { _controller: AcmeDemoBundle:Staff:show }
+
+acme_staff_home:
+    pattern:  /staff/
+    defaults: { _controller: AcmeDemoBundle:Staff:index }
+
+acme_staff_edit:
+    pattern:  /staff/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:Staff:edit }
+    requirements:
+        id:  \d+
+
+acme_staff_delete:
+    pattern:  /staff/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Staff:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#book
+######
+acme_book_add:
+    path:     /book/add
+    defaults: { _controller: AcmeDemoBundle:Book:add }
+
+acme_book_show:
+    pattern:  /book/{id}
+    defaults: { _controller: AcmeDemoBundle:Book:show }
+
+acme_book_home:
+    pattern:  /book/
+    defaults: { _controller: AcmeDemoBundle:Book:index }
+
+acme_book_edit:
+    pattern:  /book/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:Book:edit }
+    requirements:
+        id:  \d+
+
+acme_book_delete:
+    pattern:  /book/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Book:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#link
+######
+acme_link_add:
+    path:     /link/add
+    defaults: { _controller: AcmeDemoBundle:Link:add }
+
+acme_link_show:
+    pattern:  /link/{id}
+    defaults: { _controller: AcmeDemoBundle:Link:show }
+
+acme_link_home:
+    pattern:  /link/
+    defaults: { _controller: AcmeDemoBundle:Link:index }
+
+acme_link_edit:
+    pattern:  /link/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:Link:edit }
+    requirements:
+        id:  \d+
+
+acme_link_delete:
+    pattern:  /link/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Link:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#activity
+#########
+acme_activity_add:
+    path:     /activity/add
+    defaults: { _controller: AcmeDemoBundle:Activity:add }
+
+acme_activity_show:
+    pattern:  /activity/{id}
+    defaults: { _controller: AcmeDemoBundle:Activity:show }
+
+acme_activity_home:
+    pattern:  /activity/
+    defaults: { _controller: AcmeDemoBundle:Activity:index }
+
+acme_activity_edit:
+    pattern:  /activity/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:Activity:edit }
+    requirements:
+        id:  \d+
+
+acme_activity_photo:
+    pattern:  /activity/{id}/photo
+    defaults: { _controller: AcmeDemoBundle:Activity:photo}
+
+acme_activity_delete:
+    pattern:  /activity/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Activity:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#student
+#########
+acme_student_studentpage:
+    path:     /studentpage
+    defaults: { _controller: AcmeDemoBundle:Student:studentpage }
+    
+acme_staff_librarianpage:
+    path:     /librarianpage
+    defaults: { _controller: AcmeDemoBundle:Staff:librarianpage }
+
+acme_student_profile:
+    path:     /studentprofile
+    defaults: { _controller: AcmeDemoBundle:Student:showStudentProfile }
+
+acme_student_add:
+    path:     /student/add
+    defaults: { _controller: AcmeDemoBundle:Student:add }
+
+acme_student_show:
+    pattern:  /student/{id}
+    defaults: { _controller: AcmeDemoBundle:Student:show }
+
+acme_student_home:
+    pattern:  /student/
+    defaults: { _controller: AcmeDemoBundle:Student:index }
+
+acme_student_edit:
+    pattern:  /student/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:Student:edit }
+    requirements:
+        id:  \d+
+
+acme_student_delete:
+    pattern:  /student/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Student:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#class
+#########
+acme_class_add:
+    path:     /class/add
+    defaults: { _controller: AcmeDemoBundle:Studentclass:add }
+
+acme_class_show:
+    pattern:  /class/{id}
+    defaults: { _controller: AcmeDemoBundle:Studentclass:show }
+
+acme_class_home:
+    pattern:  /class/
+    defaults: { _controller: AcmeDemoBundle:Studentclass:index }
+
+acme_class_edit:
+    pattern:  /class/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:Studentclass:edit }
+    requirements:
+        id:  \d+
+
+acme_class_delete:
+    pattern:  /class/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Studentclass:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#gallery
+#########
+acme_gallery_add:
+    path:     /gallery/add
+    defaults: { _controller: AcmeDemoBundle:Gallery:add }
+
+acme_gallery_show:
+    pattern:  /gallery/{id}
+    defaults: { _controller: AcmeDemoBundle:Gallery:show }
+
+acme_gallery_home:
+    pattern:  /gallery/
+    defaults: { _controller: AcmeDemoBundle:Gallery:index }
+
+acme_gallery_edit:
+    pattern:  /gallery/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:Gallery:edit }
+    requirements:
+        id:  \d+
+
+acme_gallery_delete:
+    pattern:  /gallery/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Gallery:delete }
+    requirements:
+        id:  \d+
+########################################################################
+#job
+#########
+acme_job_add:
+    path:     /job/add
+    defaults: { _controller: AcmeDemoBundle:Job:add }
+
+acme_job_show:
+    pattern:  /job/{id}
+    defaults: { _controller: AcmeDemoBundle:Job:show }
+
+acme_job_home:
+    pattern:  /job/
+    defaults: { _controller: AcmeDemoBundle:Job:index }
+
+acme_job_edit:
+    pattern:  /job/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:Job:edit }
+    requirements:
+        id:  \d+
+
+acme_job_delete:
+    pattern:  /job/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Job:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#tansek
+#########
+acme_tansek_add:
+    path:     /tansek/add
+    defaults: { _controller: AcmeDemoBundle:Tansek:add }
+
+acme_tansek_show:
+    pattern:  /tansek/{id}
+    defaults: { _controller: AcmeDemoBundle:Tansek:show }
+
+acme_tansek_home:
+    pattern:  /tansek/
+    defaults: { _controller: AcmeDemoBundle:Tansek:index }
+
+acme_tansek_edit:
+    pattern:  /tansek/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:Tansek:edit }
+    requirements:
+        id:  \d+
+
+acme_tansek_delete:
+    pattern:  /tansek/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Tansek:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#advertising
+#########
+acme_advertising_add:
+    path:     /advertising/add
+    defaults: { _controller: AcmeDemoBundle:Advertising:add }
+
+acme_advertising_show:
+    pattern:  /advertising/{id}
+    defaults: { _controller: AcmeDemoBundle:Advertising:show }
+
+acme_advertising_home:
+    pattern:  /advertising/
+    defaults: { _controller: AcmeDemoBundle:Advertising:index }
+
+acme_advertising_edit:
+    pattern:  /advertising/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:Advertising:edit }
+    requirements:
+        id:  \d+
+
+acme_advertising_delete:
+    pattern:  /advertising/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Advertising:delete }
+    requirements:
+        id:  \d+
+
+
+########################################################################
+#notes
+######
+acme_note_specific_student:
+    pattern:  /specificstudentnote/
+    defaults: { _controller: AcmeDemoBundle:StaffStudent:showSpecificStudentNotes }
+
+
+acme_note_add:
+    path:     /note/add_all
+    defaults: { _controller: AcmeDemoBundle:StaffStudent:add }
+acme_note_specific_add:
+    path:     /note/add
+    defaults: { _controller: AcmeDemoBundle:StaffStudent:addBehvioralSpecificNote }
+acme_require_add:
+    path:     /require/add_all
+    defaults: { _controller: AcmeDemoBundle:StaffStudent:addRequire }
+acme_require_specific_add:
+    path:     /require/add
+    defaults: { _controller: AcmeDemoBundle:StaffStudent:addSpecificRequire }
+acme_note_home:
+    pattern:  /notes/
+    defaults: { _controller: AcmeDemoBundle:StaffStudent:index }
+acme_teacher_student:
+    pattern:  /teacherstudent/
+    defaults: { _controller: AcmeDemoBundle:StaffStudent:showSpecificTeacherStudents }
+
+acme_note_show:
+        pattern:  /note/{student}/{member}/{note}
+        defaults: { _controller: AcmeDemoBundle:StaffStudent:show }
+acme_note_edit:
+    pattern:  /note/{student}/{member}/{note}/edit
+    defaults: { _controller: AcmeDemoBundle:StaffStudent:edit }
+    requirements:
+        id:  \d+
+
+acme_note_delete:
+    pattern:  /note/{student}/{member}/{note}/delete/
+    defaults: { _controller: AcmeDemoBundle:StaffStudent:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#staffnotes
+######
+acme_staffnote_add:
+    path:     /staffnote/add_all
+    defaults: { _controller: AcmeDemoBundle:StaffNote:addStaffNoteToAll }
+acme_staffnote_specific_add:
+    path:     /staffnote/add
+    defaults: { _controller: AcmeDemoBundle:StaffNote:addSpecificStaffNote }
+acme_staffrequire_add:
+    path:     /staffrequire/add_all
+    defaults: { _controller: AcmeDemoBundle:StaffNote:addStaffRequireToAll}
+acme_staffrequire_specific_add:
+    path:     /staffrequire/add
+    defaults: { _controller: AcmeDemoBundle:StaffNote:addSpecificstaffRequire }
+acme_staffnote_home:
+    pattern:  /staffnotes/
+    defaults: { _controller: AcmeDemoBundle:StaffNote:index }
+acme_staffnote_specific_teacher:
+    pattern:  /specificteacher/
+    defaults: { _controller: AcmeDemoBundle:StaffNote:showSpecificTeacher }
+acme_staffnote_show:
+        pattern:  /staffnote/{id}
+        defaults: { _controller: AcmeDemoBundle:StaffNote:show }
+acme_staffnote_edit:
+    pattern:  /staffnote/{id}/edit
+    defaults: { _controller: AcmeDemoBundle:StaffNote:edit }
+    requirements:
+        id:  \d+
+
+acme_staffnote_delete:
+    pattern:  /staffnote/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:StaffNote:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#login
+######
+index_login:
+    path:     /logintype
+    defaults: { _controller: AcmeDemoBundle:Login:index }
+
+index_logout:
+    path:     /logout
+    defaults: { _controller: AcmeDemoBundle:Login:logout }
+########################################################################
+#complain
+######
+acme_complain_add:
+    path:     /complain/add
+    defaults: { _controller: AcmeDemoBundle:Complain:add }
+
+acme_complain_show:
+    pattern:  /complain/{id}
+    defaults: { _controller: AcmeDemoBundle:Complain:show }
+
+acme_complain_home:
+    pattern:  /complain/
+    defaults: { _controller: AcmeDemoBundle:Complain:index }
+
+acme_complain_delete:
+    pattern:  /complain/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Complain:delete }
+    requirements:
+        id:  \d+
+
+########################################################################
+#suggest
+########
+acme_suggest_add:
+    path:     /suggest/add
+    defaults: { _controller: AcmeDemoBundle:Suggest:add }
+
+acme_suggest_show:
+    pattern:  /suggest/{id}
+    defaults: { _controller: AcmeDemoBundle:Suggest:show }
+
+acme_suggest_home:
+    pattern:  /suggest/
+    defaults: { _controller: AcmeDemoBundle:Suggest:index }
+
+acme_suggest_delete:
+    pattern:  /suggest/{id}/delete/
+    defaults: { _controller: AcmeDemoBundle:Suggest:delete }
+    requirements:
+        id:  \d+

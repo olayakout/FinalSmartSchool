@@ -1,0 +1,76 @@
+
+    <script src="{{ asset('bundles/acmedemo/js/jquery.anoslide.js') }}"></script>
+
+
+				<div class="wrapper">
+			<div class="carousel" data-mixed>
+				<a class="prev" data-prev></a>
+				<ul>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/1.jpg') }}" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/2.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/3.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/4.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/5.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/6.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/7.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/8.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/9.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/10.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/11.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+					<li>
+						<div class="wrap"><figure><img data-src="{{ asset('bundles/acmedemo/img/slider/12.jpg') }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+					</li>
+				</ul>
+				<a class="next" data-next></a>
+				<a class="badge"></a>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$('.carousel[data-mixed] ul').anoSlide(
+			{
+				items: 5,
+				speed: 500,
+				prev: 'a.prev[data-prev]',
+				next: 'a.next[data-next]',
+				lazy: true,
+				delay: 100
+			})
+		</script>
+		
+		
+		</div>
+		<script src="http://www.anowave.com/factory/cdn/scripts/tabs.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/demo.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/rainbow.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/language/generic.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/language/javascript.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/language/css.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/language/html.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/language/php.js"></script>
+		<script type="text/javascript">
+			Demo.bind()
+		</script>
+

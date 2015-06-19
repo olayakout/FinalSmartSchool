@@ -1,0 +1,123 @@
+<?php
+
+
+namespace Acme\DemoBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="attendance")
+ * @ORM\HasLifecycleCallbacks
+ */
+class Attendance
+{
+
+ /**
+     * @ORM\Id 
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+
+/**
+     * @ORM\Column(name="timeofattendance",type="time")
+     * @Assert\NotBlank()
+     */
+  
+    private $timeofattendance;
+/**
+     * @ORM\Column(name="dateofattendance",type="date")
+     * @Assert\NotBlank()
+     */
+  
+    private $dateofattendance;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Student", inversedBy="students")
+     * @ORM\JoinColumn(name="student_id", referencedColumnName="id",onDelete="cascade")
+     */
+    protected $student;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set timeofattendance
+     *
+     * @param \DateTime $timeofattendance
+     * @return Attendance
+     */
+    public function setTimeofattendance($timeofattendance)
+    {
+        $this->timeofattendance = $timeofattendance;
+
+        return $this;
+    }
+
+    /**
+     * Get timeofattendance
+     *
+     * @return \DateTime 
+     */
+    public function getTimeofattendance()
+    {
+        return $this->timeofattendance;
+    }
+
+    /**
+     * Set student
+     *
+     * @param \Acme\DemoBundle\Entity\Student $student
+     * @return Attendance
+     */
+    public function setStudent(\Acme\DemoBundle\Entity\Student $student = null)
+    {
+        $this->student = $student;
+
+        return $this;
+    }
+
+    /**
+     * Get student
+     *
+     * @return \Acme\DemoBundle\Entity\Student 
+     */
+    public function getStudent()
+    {
+        return $this->student;
+    }
+
+    /**
+     * Set dateofattendance
+     *
+     * @param \DateTime $dateofattendance
+     * @return Attendance
+     */
+    public function setDateofattendance($dateofattendance)
+    {
+        $this->dateofattendance = $dateofattendance;
+
+        return $this;
+    }
+
+    /**
+     * Get dateofattendance
+     *
+     * @return \DateTime 
+     */
+    public function getDateofattendance()
+    {
+        return $this->dateofattendance;
+    }
+}

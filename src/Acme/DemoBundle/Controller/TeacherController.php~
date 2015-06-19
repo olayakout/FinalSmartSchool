@@ -1,0 +1,148 @@
+<?php
+
+namespace Acme\DemoBundle\Controller;
+use Acme\DemoBundle\Entity\Teacher.php;
+use Acme\DemoBundle\Form\TeacherType;
+use Symfony\Component\HttpFoundation\Response;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Acme\DemoBundle\Form\ContactType;
+
+// these import the "@Route" and "@Template" annotations
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+
+class TeacherController extends Controller
+{
+
+#list 
+
+    /**
+     * @Route("/", name="_demo")
+     * @Template()
+     */
+    public function indexAction()
+    {
+	$teachers = $this->getDoctrine()
+            ->getRepository('AcmeDemoBundle:Teacher')
+            ->findAll();
+      if (!$teachers) {
+        throw $this->createNotFoundException('No teachers found');
+      }
+    
+      $build['teachers'] = $teachers;
+      return $this->render('AcmeDemoBundle:Demo:teachers_show_all.html.twig', $build);
+    }
+
+/////////////////////////////////////////////////////////////CRUD Operations of Teacher////////////////////////////////////////////
+
+#add
+	public function addAction()
+		{
+			$teacher = new teacher();
+			$form = $this->createForm(new TeacherType(), $teacher);
+		
+			$request = $this->get('request');
+			$form->handleRequest($request);
+		
+			if($request->getMethod() == 'POST')
+			{
+				if($form->isValid())
+				{
+					//$name=$form->get('fullname')->getData();
+				
+		       //to save the data of teacher in database
+					$em = $this->getDoctrine()->getManager();
+					$em->persist($teacher);
+					$em->flush();
+
+					return new Response('تم حفظ البيانات بنجاح');
+				}
+			
+			   return $this->render('AcmeDemoBundle:Teacher:addteacher.html.twig',array('form'=>$form->createView())); 
+
+			}
+
+			   return $this->render('AcmeDemoBundle:Teacher:addteacher.html.twig',array('form'=>$form->createView())); 
+
+		}
+
+#show	
+       public function showAction($id) {
+	      $teachers = $this->getDoctrine()
+		    ->getRepository('AcmeDemoBundle:Teacher')
+		    ->find($id);
+	      if (!$teachers) {
+		throw $this->createNotFoundException('No teachers found by id ' . $id);
+	      }
+	    
+	      $build['teachers_item'] = $teachers;
+	      return $this->render('AcmeDemoBundle:Teacher:teachers_show.html.twig', $build);
+	    }
+
+#edit
+	public function editAction($id, Request $request) {
+
+	    $em = $this->getDoctrine()->getManager();
+	    $teachers = $em->getRepository('AcmeDemoBundle:Teacher')->find($id);
+	    if (!$teachers) {
+	      throw $this->createNotFoundException(
+		      'No teachers found for id ' . $id
+	      );
+	    }
+	    
+	    $form = $this->createFormBuilder($teachers)
+		->add('code', 'text')
+		->add('fullname', 'text')
+		->add('job', 'text')
+		->add('graduate', 'text')
+		->add('date_of_graduate', 'date')
+		->add('birthday', 'date')
+		->add('appointment_date', 'date')
+		->add('join_date', 'date')
+		->add('degree', 'text')
+		->add('date_of_get_degree', 'date')
+		->add('national_id', 'text')
+		->add('address', 'text')
+		->add('phone', 'text')
+		->add('save', 'submit')
+		->getForm();
+
+	    $form->handleRequest($request);
+	 
+	    if ($form->isValid()) {
+		$em->flush();
+		return $this->render('AcmeDemoBundle:Demo:teachers_show_all.html.twig');
+
+		// return new Response('News updated successfully');
+	    }
+	    
+	    $build['form'] = $form->createView();
+
+	    return $this->render('AcmeDemoBundle:Teacher:news_add.html.twig', $build);
+	 }
+		 
+#delete
+		 
+		 public function deleteAction($id, Request $request) {
+
+		    $em = $this->getDoctrine()->getManager();
+		    $teachers = $em->getRepository('AcmeDemoBundle:Teacher')->find($id);
+		    if (!$teachers) {
+		      throw $this->createNotFoundException(
+			      'No news found for id ' . $id
+		      );
+		    }
+
+		      $em->remove($teachers);
+		      $em->flush();
+		      return new Response('News deleted successfully');
+
+		    
+		    $build['form'] = $form->createView();
+		    return $this->render('AcmeDemoBundle:Teacher:news_add.html.twig', $build);
+		}
+
+	}

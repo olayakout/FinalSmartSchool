@@ -1,0 +1,70 @@
+tr{
+border-bottom: rgb(250, 241, 215) solid 1px;
+}
+
+table{
+  direction: rtl;
+  width: 596px;
+  margin-right: 277px;
+  font-size: 13px;
+  margin-top: -34px;
+  margin-bottom: 20px;
+}
+
+#map{
+   margin-right: 56px;
+  float: right;
+
+}
+
+#mapbox > h1{
+  direction: rtl;
+  color: #D5C651;
+  font-size: 53px;
+  font-weight: bold;
+  margin-top: -217px;
+  margin-bottom: 24px;
+  margin-right: 59px;
+}
+
+#mapbox{
+  margin-right: 142px;
+}
+
+#mapbox > img{
+  width: 620px;
+  border: solid 10px #D5C651;
+  border-radius: 29px;
+}
+
+#school{
+  padding-bottom: 7px;
+}
+
+#android{
+  border-radius: 23px;
+  width: 309px;
+  height: 446px;
+  border: solid 10px rgb(255, 255, 255);
+  background-color: rgb(213, 198, 81);
+  margin-left: 50px;
+  color:white;
+  direction: rtl;
+}
+
+#android > p{
+  text-align: center;
+  font-size: 13px;
+}
+
+#android > h1 {
+  font-family: KacstDecorative;
+  font-size: 80px;
+  text-align: center;
+}
+
+#android > a > img{
+  width: 165px;
+  margin-right: 59px;
+  margin-top: 36px;
+}

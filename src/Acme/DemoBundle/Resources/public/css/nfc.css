@@ -1,0 +1,19 @@
+#g{float:left;}
+
+#txt{
+  color: white;
+  margin-top: -238px;
+  direction: rtl;
+  margin-right: 20px;
+  font-size: 18px;
+  text-align: center;
+  width: 767px;
+  float: right;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(101, 98, 88, 0.54);
+}
+
+#page{
+  margin-top: -181px;
+}

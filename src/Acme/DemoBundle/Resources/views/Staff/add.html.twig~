@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+<title> اضافة عضو جديد </title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+
+    <link href="{{ asset('bundles/acmedemo/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="{{ asset('bundles/acmedemo/css/freelancer.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{{ asset('bundles/acmedemo/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap-rtl.css') }}">
+
+    <link href="{{ asset('bundles/acmedemo/css/custom_add_staff.css') }}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+ <h1> ادخال بيانات عضو هيئة تدريس </h1>
+<br> 
+<br>
+ {{ form_start(form ,{attr: {novalidate : 'novalidate' }}) }}
+<table class="add_staff">
+    <tr> 
+      <td>  {{ form_label(form.fullname, 'الاسم كامل') }} </td>
+      <td>  {{ form_widget(form.fullname)}} </td> 
+      <td>  {{ form_errors(form.fullname) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.birthday, 'تاريخ الميلاد') }} </td>
+      <td>  {{ form_widget(form.birthday)}} </td> 
+      <td>  {{ form_errors(form.birthday) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.address, 'العنوان') }} </td>
+      <td>  {{ form_widget(form.address)}} </td> 
+      <td>  {{ form_errors(form.address) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.phone, 'التليفون') }} </td>
+      <td>  {{ form_widget(form.phone)}} </td> 
+      <td>  {{ form_errors(form.phone) }} </td>
+    </tr>
+  
+
+    <tr> 
+      <td>  {{ form_label(form.nationalid, 'الرقم القومي') }} </td>
+      <td>  {{ form_widget(form.nationalid)}} </td> 
+      <td>  {{ form_errors(form.nationalid) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.job, 'الوظيفة') }} </td>
+      <td>  {{ form_widget(form.job)}} </td> 
+      <td>  {{ form_errors(form.job) }} </td>
+      <td> <a href="/job/add"> اضافة مسمي وظيفي جديد</a> <td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.code, 'كود المعلم') }} </td>
+      <td>  {{ form_widget(form.code)}} </td> 
+      <td>  {{ form_errors(form.code) }} </td>
+    </tr>
+
+
+
+    <tr> 
+      <td>  {{ form_label(form.graduate, 'المؤهل الدراسي') }} </td>
+      <td>  {{ form_widget(form.graduate)}} </td> 
+      <td>  {{ form_errors(form.graduate) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.dateofgraduate, 'تاريخ التخرج ') }} </td>
+      <td>  {{ form_widget(form.dateofgraduate)}} </td> 
+      <td>  {{ form_errors(form.dateofgraduate) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.anotherstudy, 'دراسات عليا') }} </td>
+      <td>  {{ form_widget(form.anotherstudy)}} </td> 
+      <td>  {{ form_errors(form.anotherstudy) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.dateofanotherstudy, 'تاريخ الحصول علي دراسات عليا ') }} </td>
+      <td>  {{ form_widget(form.dateofanotherstudy)}} </td> 
+      <td>  {{ form_errors(form.dateofanotherstudy) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.appointmentdate, 'تاريخ التعيين') }} </td>
+      <td>  {{ form_widget(form.appointmentdate)}} </td> 
+      <td>  {{ form_errors(form.appointmentdate) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.joindate, 'تاريخ استلام العمل ') }} </td>
+      <td>  {{ form_widget(form.joindate)}} </td> 
+      <td>  {{ form_errors(form.joindate) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.degree, 'الدرجة') }} </td>
+      <td>  {{ form_widget(form.degree)}} </td> 
+      <td>  {{ form_errors(form.degree) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.dateofgetdegree, 'تاريخ الحصول علي الدرجة ') }} </td>
+      <td>  {{ form_widget(form.dateofgetdegree)}} </td> 
+      <td>  {{ form_errors(form.dateofgetdegree) }} </td>
+    </tr>
+
+    <tr> 
+      <td>  {{ form_label(form.image, 'صورة شخصية') }} </td>
+      <td>  {{ form_widget(form.image)}} </td> 
+      <td>  {{ form_errors(form.image) }} </td>
+    </tr>
+</table>
+ {{ form_widget(form.submit , { 'label': 'حفظ' } ) }}
+
+ {{ form_end(form) }}
+</body>
+</html>

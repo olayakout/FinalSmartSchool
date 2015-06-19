@@ -1,0 +1,8 @@
+/**
+ * Class Image
+ *
+ * @ORM\Entity()
+ * @ORM\HasLifecycleCallbacks
+ */
+class Image extends BaseEntity
+{

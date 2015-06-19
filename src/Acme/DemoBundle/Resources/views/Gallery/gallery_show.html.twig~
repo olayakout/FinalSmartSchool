@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>روضة المأمون</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+
+    <link href="{{ asset('bundles/acmedemo/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="{{ asset('bundles/acmedemo/css/freelancer.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{{ asset('bundles/acmedemo/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap-rtl.css') }}">
+
+    <link href="{{ asset('bundles/acmedemo/css/custom_show.css') }}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<img id="pp" src="{{ asset('upload/gallery/' ~ pic_item.id ~'/' ~ pic_item.image)}}" height="300" width="300"/>
+<table>
+
+		<tr><td class="label">تاريخ الصورة :</td><td>{{ pic_item.dateofpic|date("m/d/Y") }}</td></tr>
+		<tr><td class="label">النشاط الخاص بهذة الصورة  :</td><td>{{ pic_item.activity }}</td></tr>
+		<tr><td class="label">القاعة:</td><td>{{ pic_item.class }}</td></tr>
+		
+</table>

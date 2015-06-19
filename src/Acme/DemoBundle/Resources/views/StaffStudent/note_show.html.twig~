@@ -1,0 +1,38 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} Add Student {% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+
+    <div class="row vertical-center-row">
+
+        <div class="col-lg-12">
+            <div class="row " style="direction: rtl;">
+
+                <div class="col-xs-12 col-xs-offset-4">
+
+<h2>عرض الملاحظات</h2>
+<table>
+         <tr><td class="label">  الملاحظات:</td><td>{{ note_item[0].note }}</td></tr>
+        <tr> <td class="label">نوع الملاحظة :</td><td>{{ note_item[0].noteType }}</td></tr>
+{%if(note_item[0].noteDate != null)%}
+        <tr><td class="label"> وقت الملاحظة:</td><td>{{ note_item[0].noteDate.format('Y-m-d')  }}</td></tr>
+{%endif%}
+        <tr><td class="label"> المرسل:</td><td>{{ note_item[0].member  }}</td></tr>
+
+        <tr> <td class="label"> المرسل اليه:</td><td>{{ note_item[0].student }}</td></tr>
+     
+    
+</table>
+</div>
+</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

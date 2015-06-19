@@ -1,0 +1,43 @@
+#hi{
+  margin-top: -201px;
+  text-align: center;
+  font-family: KacstDecorative;
+  font-size: 66px;
+  color: rgb(187, 32, 56);
+}
+
+#photo{
+  float: right;
+  margin-top: -93px;
+  text-align: center;
+  width: 399px;
+  border: solid 10px #D5C651;
+  border-radius: 29px;
+  background-color:#D5C651;
+ margin-right: 17px;
+  margin-top: 20px;
+
+}
+
+#photo >img{
+  width: 345px;
+  height: 351px;
+  border-radius: 17px;
+  margin-top: 18px;
+  padding-left: 8px;
+  padding-bottom: 23px;
+}
+
+
+#sorry{
+  font-size: 32px;
+  margin-top: 42px;
+  float: right;
+  margin-right: 497px;
+}
+
+#cl{
+  color:rgb(186, 32, 55);;
+  font-family: KacstDecorative;
+  font-size:20px;
+}

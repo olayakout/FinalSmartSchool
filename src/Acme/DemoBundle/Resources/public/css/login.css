@@ -1,0 +1,37 @@
+form{
+  border: solid 12px rgb(129, 109, 83);
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 29px;
+  color: rgb(129, 109, 83);
+  margin-top: -171px;
+  margin-left: 328px;
+  background-color: black;
+  font-size: 21px;
+}
+
+form > h1{
+  direction: rtl;
+  color: rgb(138, 203, 154);
+  font-size: 43px;
+  margin-bottom: 45px;
+   font-family: KacstDecorative;
+}
+
+form >#button{
+  width: 133px;
+  height: 41px;
+  margin-top: 20px;
+  background-color: rgb(138, 203, 154);
+  color: white;
+  font-size: 22px;
+}
+
+form > input{
+  margin-bottom: 18px;
+}
+#f{
+  margin-top: -186px;
+  margin-left: 190px;
+}

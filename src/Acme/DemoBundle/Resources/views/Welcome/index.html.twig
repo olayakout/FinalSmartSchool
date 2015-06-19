@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+             روضة المأمون
+        </title>
+        
+        <link href="{{ asset('bundles/acmedemo/img/favicon.ico') }}"  rel="shortcut icon"> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ asset('bundles/acmedemo/css/animate.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('bundles/acmedemo/css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('bundles/acmedemo/css/owl.carousel.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('bundles/acmedemo/css/owl.transitions.css') }}" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/style.css') }}" />
+        <link href="{{ asset('bundles/acmedemo/css/custom.css') }}" rel="stylesheet" type="text/css"/>
+
+	<script src="{{ asset('bundles/acmedemo/js/modernizr.custom.63321.js') }}"></script>
+          <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+          
+            }
+            #content{
+                margin:0 auto;
+            }
+
+
+        </style>
+    </head>
+    
+    <body class="container" >
+
+        <div>
+            <span class="animated fadeInLeft glyphicon glyphicon glyphicon-cloud" aria-hidden="true" class="img-responsive"> 
+            </span> 
+      
+        </div>
+       
+        <div class=" animated rotateIn sun">
+             
+            <img src="{{ asset('bundles/acmedemo/img/sun.png') }}" class="img-responsive">
+      
+        </div>
+        
+        <div id="clouds">
+            <div class="cloud x1"></div>
+            <!-- Time for multiple clouds to dance around -->
+            <div class="cloud x2"></div>
+            <div class="cloud x3"></div>
+            <div class="cloud x4"></div>
+            <div class="cloud x5"></div>
+        </div>
+        
+
+        <div class="bird">
+            <img src="{{ asset('bundles/acmedemo/img/slider.png') }}"/>
+		
+ <div class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
+
+		<ul class="nav navbar-nav navbar-right one">
+		    <li class="page-scroll"id="staffmenu">
+                        <a href="/contact" >تواصل معنا</a>
+                    </li>
+                   <li class="page-scroll" id="adver">
+                        <a href="/advertising/index" >اعلانات</a>
+                    </li>
+                    <li class="page-scroll"id="activitymenu">
+                        <a href="/activity/index" >الأنشطة</a>
+                    </li>
+                    <li class="page-scroll" id="libarary">
+                        <a href="/library/index">المكتبة</a>
+                    </li>
+		            <li class="page-scroll" id="about">
+                        <a href="/about">عن الروضة</a>
+                    </li>  
+		            <li class="page-scroll" id="home1">
+                        <a href="/" >الصفحة الرئيسية</a>
+                    </li>                                   
+                </ul>
+<br>
+                <ul class="nav navbar-nav navbar-right two">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll" id="login">
+                        <a href="/login">تسجيل الدخول</a>
+                    </li> 
+                   <li class="page-scroll" id="complain">
+                        <a href="/complain/index">شكاوي و مقترحات </a>
+                    </li> 
+
+		    <li class="page-scroll"id="contact">
+                        <a href="/staff/index" >فريق العمل</a>
+                    </li>
+		   <li class="page-scroll"id="class">
+                        <a href="/class/index" >قاعات الروضة</a>
+                    </li>
+                    </ul>
+		
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+	
+       <div id="home">
+	        <img src="{{ asset('bundles/acmedemo/img/home01.png') }}" class="img-responsive"/>  
+       </div>
+       <div id="duck">
+	        <img src="{{ asset('bundles/acmedemo/img/duck.png') }}" class="img-responsive"/>  
+		<div id="talkbubble"> <h1>روضة المأمون</h1> {%if(advs)%}
+
+			<ul id="studentclass">
+			  {% for adv in advs %}
+				<li> {{ adv.body|length > 50 ? adv.body|slice(0, 50) ~ '...' : adv.body  }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </li>
+				{% endfor %}
+			</ul>
+			
+                 <a href="/advertising/index" id="more"> تفاصيل</a>{%endif%}	
+ 		</div>
+       </div>
+<div id="social"> 
+		<a href="https://www.facebook.com/pages/%D9%82%D8%A7%D8%B9%D8%A9-%D9%88%D9%8A%D9%86%D9%8A-%D8%B1%D9%88%D8%B6%D8%A9-%D8%A7%D9%84%D9%85%D8%A3%D9%85%D9%88%D9%86-%D8%A7%D9%84%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9-%D9%84%D8%BA%D8%A7%D8%AA/361802560510850?fref=ts"> <img src="{{ asset('bundles/acmedemo/img/fb.png') }}" class="img-responsive" id="fb" alt="facebook account"/>  </a> 
+               
+                <a href="/"><img src="{{ asset('bundles/acmedemo/img/and.png') }}" class="img-responsive" id="and"/>  </a> 
+                <a href="http://portal.moe.gov.eg/elearning/Pages/kg.aspx"><img src="{{ asset('bundles/acmedemo/img/m.png') }}" class="img-responsive" id="m"/>  </a> 
+		<a href="/nfc"><img src="{{ asset('bundles/acmedemo/img/nfc.png') }}" class="img-responsive" id="nfc"/>  </a> 
+	</div>
+<div class="row">
+	   <div class="ac col-md-4" id="one">
+		   <h1 class="title"> عن الروضة </h1>
+		   <a href="/about"  class="button1" >المزيد</a>
+		   <div class="l"> 
+		      <img src="{{ asset('bundles/acmedemo/img/1.png') }}" class="img-responsive"> 
+		   </div>
+
+		   <p> دراسة متميزة انشطة متطورة طفل مبدع معلم متميز لسنا الوحيدون ولكننا متميزون </p>
+	
+	  </div>
+
+          <div class="ac col-md-4" id="two">
+		<h1 class="title">  قاعات الروضة </h1>
+		<a href="/class/index"  class="button2" >المزيد</a>
+		
+		<ul id="studentclass">
+			  {% for class in classes %}
+				<li> {{class.name}} </li>
+				{% endfor %}
+		</ul>
+		
+            <div id="d"><img src="{{ asset('bundles/acmedemo/img/flowers1.png') }}" class="img-responsive"/></div>
+		
+	 </div>
+     
+         <div class="ac col-md-4" id="three">
+		<h1 class="title">  المكتبة </h1>
+		<a  class="button1" href="/library/index">المزيد</a>
+                <div class="s"> 
+                         <img src="{{ asset('bundles/acmedemo/img/book.png') }}" class="img-responsive"/> 
+                </div>
+                <p>
+يوجد لدينا جميع الكتب الخاصة بتعليم الأطفال و تنمية مهارتهم كما يوجد ايضا بعض اللينكات المفيدة و نصائح لكيفية تعليم و تربية طفلك 
+		</p>
+
+
+         </div>
+
+
+
+		<div class="ac col-md-4"  id="four">
+				<h1 class="title"> الأنشطة</h1>
+				<a href="/activity/index" class="button4" >المزيد</a>
+			        <ul id="activity">
+					  {% for activity in activites %}
+						<li> {{activity.name}} </li>
+					  {% endfor %}
+			        </ul> 
+		
+			        <div id="c">
+                                     <img src="{{ asset('bundles/acmedemo/img/flowers1.png') }}" class="img-responsive"/>
+                                </div>
+		</div>
+		<div class="ac col-md-8" id="five"> 
+			<h1 class="title"> فريق العمل </h1>
+				<a href="/staff/index" class="button5" >المزيد</a>
+				
+					<table id="staff">
+					  {% for teacher in staff %}
+						<tr>
+						 <td>{{teacher.fullname}}</td> <td>{{teacher.job}}</td>
+						
+						</tr>
+ 						
+					  {% endfor %}
+					</table>
+			        <div id="e">			      
+                                     <img src="{{ asset('bundles/acmedemo/img/teacher.png') }}" class="img-responsive"/>
+				</div>
+		</div>
+		</div>
+{%if(contents)%}
+		<div class="row" id="condition">
+				<label> شروط القبول بمرحلة رياض الأطفال</label>
+				<ul id="content">
+					  {% for content in contents %}
+						<li> {{content.content}} </li>
+					  {% endfor %}
+			        </ul> 
+		</div>
+
+                <div class=" animated flipInX " id="tree">
+                            <img src="{{ asset('bundles/acmedemo/img/wrapper.png') }}" class="img-responsive"/>
+                </div>
+{%endif%}
+
+<label id="copyright"> CopyRight&copy;<a href="/teamwork" >Smart School Team </a> 2015 </label>
+
+
+		      
+</div> 
+       
+            
+      
+		
+       
+                    
+        
+     <script src="{{ asset('bundles/acmedemo/js/jquery-1.11.2.min.js') }}" type="text/javascript"></script>
+     <script src="{{ asset('bundles/acmedemo/js/bootstrap.js') }}" type="text/javascript"></script>
+     <script src="{{ asset('bundles/acmedemo/js/owl.carousel.js') }}" type="text/javascript"></script>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.stackslider.js') }}"></script>
+	<script type="text/javascript">
+	
+		$( function() {
+		
+			$( '#st-stack' ).stackslider();
+
+		});
+
+	</script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.easing.1.3.js') }}"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#nav > div').hover(
+                function () {
+                    var $this = $(this);
+                    $this.find('img').stop().animate({
+                        'width'     :'199px',
+                        'height'    :'199px',
+                        'top'       :'-25px',
+                        'left'      :'-25px',
+                        'opacity'   :'1.0'
+                    },500,'easeOutBack',function(){
+                        $(this).parent().find('ul').fadeIn(700);
+                    });
+
+                    $this.find('a:first,h2').addClass('active');
+                },
+                function () {
+                    var $this = $(this);
+                    $this.find('ul').fadeOut(500);
+                    $this.find('img').stop().animate({
+                        'width'     :'52px',
+                        'height'    :'52px',
+                        'top'       :'0px',
+                        'left'      :'0px',
+                        'opacity'   :'0.1'
+                    },5000,'easeOutBack');
+
+                    $this.find('a:first,h2').removeClass('active');
+                }
+            );
+            });
+        </script>
+     <script src="{{ asset('bundles/acmedemo/js/custom.js') }}" type="text/javascript"></script>
+    </body>
+</html>

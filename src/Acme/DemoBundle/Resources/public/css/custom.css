@@ -1,0 +1,645 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\000031}}
+.container {
+  background-image: url(../img/bg.png); 
+  background-color: rgb(250, 242, 217);
+ 
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\000035}}
+.glyphicon-cloud {
+  font-size: 323px;
+  color: rgba(152, 159, 228, 0.3);
+  text-shadow: 9px -17px white;
+  position: absolute;
+  top: 14px;
+  left: 35px;
+  z-index: -1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\0000316}}
+.sun {
+  top: 0;
+  right: 0;
+  position: absolute; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\0000325}}
+* {
+  margin: 0;
+  padding: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\0000327}}
+body {
+  /*To hide the horizontal scroller appearing during the animation*/
+  overflow-x: hidden; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\0000332}}
+#clouds {
+  padding: 100px 0; }
+
+/*Time to finalise the cloud shape*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\0000337}}
+.cloud {
+  width: 200px;
+  height: 60px;
+  background: #fff;
+  border-radius: 200px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  position: relative;
+  z-index: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\0000349}}
+.cloud:before, .cloud:after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\0000365}}
+.cloud:after {
+  width: 120px;
+  height: 120px;
+  top: -55px;
+  left: auto;
+  right: 15px; }
+
+/*Time to animate*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\0000371}}
+.x1 {
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite; }
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\0000378}}
+.x2 {
+  left: 200px;
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0.6;
+  /*opacity proportional to the size*/
+  /*Speed will also be proportional to the size and opacity*/
+  /*More the speed. Less the time in 's' = seconds*/
+  -webkit-animation: moveclouds 25s linear infinite;
+  -moz-animation: moveclouds 25s linear infinite;
+  -o-animation: moveclouds 25s linear infinite; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\0000393}}
+.x3 {
+  left: -250px;
+  top: -200px;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+  /*opacity proportional to the size*/
+  -webkit-animation: moveclouds 30s linear infinite;
+  -moz-animation: moveclouds 30s linear infinite;
+  -o-animation: moveclouds 30s linear infinite; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\00003106}}
+.x4 {
+  left: 470px;
+  top: -250px;
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  transform: scale(0.75);
+  opacity: 0.75;
+  /*opacity proportional to the size*/
+  -webkit-animation: moveclouds 25s linear infinite;
+  -moz-animation: moveclouds 25s linear infinite;
+  -o-animation: moveclouds 25s linear infinite; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\00003119}}
+.x5 {
+  left: -150px;
+  top: -150px;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+  /*opacity proportional to the size*/
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 50s linear infinite;
+  -o-animation: moveclouds 50s linear infinite; }
+
+@-webkit-keyframes moveclouds {
+  0% {
+    margin-left: 1000px; }
+
+  100% {
+    margin-left: -1000px; } }
+
+@-moz-keyframes moveclouds {
+  0% {
+    margin-left: 1000px; }
+
+  100% {
+    margin-left: -1000px; } }
+
+@-o-keyframes moveclouds {
+  0% {
+    margin-left: 1000px; }
+
+  100% {
+    margin-left: -1000px; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\00003147}}
+section img {
+  width: 700px;
+  height: 353px;
+  margin-top: 215px;
+  border-radius: 300px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\00003155}}
+.st-wrapper {
+  height: 476px;
+  margin-top: -302px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\00003160}}
+.st-wrapper nav span {
+  width: 107px;
+  left: 50%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\00003165}}
+.st-wrapper .st-title {
+  padding: 24px 39% 492px;
+  background-repeat: no-repeat; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ola\/NetBeansProjects\/lab\/public_html\/sass\/custom\.scss}line{font-family:\00003170}}
+.bird {
+  margin-top: -484px;
+  float: left;
+  margin-left: 596px;
+  position: relative;
+  z-index: 1; }
+
+#home{
+   margin-top: -252px;
+  float: left;
+
+}
+
+#duck{
+  margin-top: 36px;
+  float:left;
+}
+
+#social{
+width: 249px;
+float:left;
+  margin-left: -1144px;
+  margin-top:  112px;
+
+}
+
+#social img#fb{
+  width: 37px;
+  float: left;
+  margin-right: 11px;
+}
+
+#social img#and{
+  width: 33px;
+  margin-bottom: 12px;
+  float:left;
+  margin-right: 10px;
+}
+
+#social img#m {
+  width: 83px;
+  margin-bottom: 12px;
+  margin-top: 4px;
+  float:left;
+}
+
+#social img#nfc {
+  width: 50px;
+  margin-bottom: -95px;
+  margin-top: -2px;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -38px;
+  margin-top: 184px;
+}
+
+#home1{
+  background-color: rgb(72, 179, 206);
+}
+#about{
+  background-color:rgb(129, 109, 83);
+}
+
+#libarary{
+  background-color:rgb(219, 102, 108);
+}
+#adver{
+ background-color:rgb(235, 116, 0);
+}
+#activitymenu{
+ background-color:rgb(213, 198, 81);
+
+}
+#contact{
+ background-color:rgb(181, 204, 224);
+
+}
+
+#class{
+ background-color:rgb(251, 157, 130);
+
+}
+
+#staffmenu{
+ background-color:rgb(239, 192, 67);
+
+}
+
+#complain{
+ background-color:rgb(201, 165, 117);
+
+}
+
+#login{
+ background-color:rgb(138, 203, 154);
+
+}
+.navbar-right {
+  float: right !important;
+  margin-right: -148px;
+}
+
+.navbar-nav > li{
+float:left !important;
+direction:rtl;
+margin-left: 2px;
+margin-bottom: 3px;
+color: white;
+border-radius: 22px;
+}
+
+.navbar-right ~ .navbar-right {
+  margin-right: 15px;
+  margin-left: -34px;
+}
+
+.navbar-nav > li > a:hover {
+  color: white;
+  border-radius: 22px;
+  background-color: rgb(143, 148, 148);
+}
+
+.menu{
+  margin-left: -251px;
+  margin-top: 20px;
+}
+
+.navbar-nav > li > a{
+color:white;
+}
+
+.ac{
+  width: 380px;
+  height: 417px;
+  margin-top: 30px;
+  border-radius: 29px;
+  margin-left: 47px;
+  float:left;
+}
+
+#one{
+  background: url(../img/banner1_bg.jpg) 0 0 no-repeat #efc043;
+}
+
+#two{
+  background: url(../img/banner2_bg.jpg) 0 0 no-repeat #d5c651;
+}
+#three{
+  background: url(../img/banner3_bg.jpg) 0 0 no-repeat #eb7400;
+}
+
+#four{
+  background: url(../img/banner4_bg.jpg) 0 0 no-repeat #4ADAFF;
+  height:504px;
+}
+
+#five{
+  background: url(../img/banner5_bg.jpg) 0 0 no-repeat #EB8F92;
+   background-size: 822px 136px;
+  width: 807px;
+  height:504px;
+}
+
+.button1 {
+  margin-top: 22px;
+  display: inline-block;
+  min-width: 70px;
+  height: 70px;
+  border: 5px solid #efc043;
+  line-height: 70px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Finger Paint';
+  font-weight: 400;
+  color: #efc043;
+  white-space: nowrap;
+  letter-spacing: 0px;
+  background: #fcf4db;
+  border-radius: 40px;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  margin-left: -5px;
+}
+
+
+.button2{
+  margin-top: 22px;
+  display: inline-block;
+  min-width: 70px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Finger Paint';
+  font-weight: 400;
+  white-space: nowrap;
+  letter-spacing: 0px;
+  border-radius: 40px;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  margin-left: -5px;
+  border: 5px solid #fcf4db;
+  color: #fcf4db;
+  background: #d5c651;
+}
+
+.button4{
+  margin-top: 22px;
+  display: inline-block;
+  min-width: 70px;
+  height: 70px;
+  border: 5px solid #4ADAFF;
+  line-height: 70px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Finger Paint';
+  font-weight: 400;
+  color: #4ADAFF;
+  white-space: nowrap;
+  letter-spacing: 0px;
+  background: #fcf4db;
+  border-radius: 40px;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  margin-left: -5px;
+}
+
+.button5 {
+  margin-top: 22px;
+  display: inline-block;
+  min-width: 70px;
+  height: 70px;
+  border: 5px solid #EB8F92;
+  line-height: 70px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Finger Paint';
+  font-weight: 400;
+  color: #EB8F92;
+  white-space: nowrap;
+  letter-spacing: 0px;
+  background: #fcf4db;
+  border-radius: 40px;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  margin-left: 32px;
+}
+
+#staff{
+float: right;
+  direction: rtl;
+  color: white;
+  font-size: 18px;
+  margin-top: 119px;
+margin-right:-204px;
+}
+
+table{
+width:412px;
+height:auto;
+float:right;
+}
+tr{
+  border-bottom: black solid 1px;
+}
+
+.title{
+  direction: rtl;
+  font-size: 36px;
+  color: white;
+  margin-right: 20px;
+  font-family: serif;
+float:right;
+}
+
+p{
+  direction: rtl;
+  color: white;
+  padding: 20px;
+  font-size: 18px;
+}
+
+#studentclass{
+float: right;
+  direction: rtl;
+  color: white;
+  padding: 20px;
+  font-size: 18px;
+  margin-right: 32px;
+
+
+}
+
+#activity{
+float: right;
+  direction: rtl;
+  color: white;
+  font-size: 18px;
+  margin-right: -103px;
+  margin-top: 119px;
+}
+
+#condition{
+   direction: rtl;
+  margin-top: 118px;
+  color: rgb(238, 74, 82);
+  font-size: 41px;
+  margin-right: 483px;
+}
+
+#d{
+  margin-top: 179px;
+  margin-left: 48px;
+}
+
+#content{
+float: right;
+  direction: rtl;
+  color: rgb(74, 65, 65);
+  font-size: 14px;
+  margin-right: 81px;
+  margin-top: 18px;
+  margin-left: 60px;
+}
+
+#content > li{
+  margin-bottom: 34px;
+}
+#c{
+  margin-top: 264px;
+  margin-left: 48px;
+}
+
+#e{
+  margin-top: 36px;
+  margin-left: 14px;
+  width: 300px;
+}
+
+
+h1{
+ direction: rtl;
+color: white;
+}
+
+.s{
+width: 182px;
+  height: 163px;
+  margin-left: 106px;
+  margin-top: 35px;
+
+}
+
+#tree{
+float:right;
+margin-top:-801px;
+}
+
+.l{
+   width: 182px;
+  height: 172px;
+  margin-left: 71px;
+  margin-bottom: 42px;
+}
+
+
+#talkbubble {
+   width: 710px;
+   height: 250px;
+   background: red;
+   position: relative;
+   -moz-border-radius:    10px;
+   -webkit-border-radius: 10px;
+   border-radius:         10px;
+}
+#talkbubble:before {
+   content:"";
+   position: absolute;
+   right: 100%;
+   top: 26px;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-right: 26px solid red;
+   border-bottom: 13px solid transparent;
+}
+
+#talkbubble > h1{
+  direction: rtl;
+  color: white;
+  padding-top: 32px;
+  padding-right: 185px;
+  font-size: 52px;
+  font-family: KacstDecorative;
+}
+
+#talkbubble > li{
+  direction: rtl;
+  color: white;
+  float: right;
+  font-size: 15px;
+}
+
+#more{
+color: rgb(181, 204, 224);
+  font-size: 19px;
+  margin-left: 29px;
+  border: solid white;
+  border-radius: 50%;
+  padding: 16px;
+  background: rgb(255, 244, 128);
+}
+#copyright{
+margin-right: 475px;
+  float: right;
+  margin-top: 7px;
+  color: rgb(137, 90, 75);
+}
+#copyright > a{
+  color: #2AAE4A;
+}
+
+#talkbubble {
+width: 698px;
+  height: 222px;
+  background: rgba(181, 204, 224, 1);
+  position: relative;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 210px;
+  margin-top: -268px;
+  margin-left: 106px;
+}
+#talkbubble:before {
+content: "";
+  position: absolute;
+  right: 97%;
+  top: 150px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 26px solid rgba(181, 204, 224, 1);
+  border-bottom: 13px solid transparent;
+}
